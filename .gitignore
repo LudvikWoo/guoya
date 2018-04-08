@@ -1,0 +1,7 @@
+.settings/
+target/
+test-output/
+.classpath
+.project
+src/main/webapp/basicClass/多媒体资源/mp3/*.mp3
+src/main/webapp/basicClass/多媒体资源/mp4/*.mp4
