@@ -5,7 +5,7 @@
  * $Id$
  */
 
-package com.guoyasoft.bean.api.user.signUp;
+package com.guoyasoft.bean.api.user.queryUser;
 
   //---------------------------------/
  //- Imported classes and packages -/
@@ -27,7 +27,7 @@ import org.exolab.castor.xml.validators.*;
  * 
  * @version $Revision$ $Date$
 **/
-public class SignUpRequestDescriptor extends org.exolab.castor.xml.util.XMLClassDescriptorImpl {
+public class QryUserReqDescriptor extends org.exolab.castor.xml.util.XMLClassDescriptorImpl {
 
 
       //--------------------------/
@@ -47,9 +47,9 @@ public class SignUpRequestDescriptor extends org.exolab.castor.xml.util.XMLClass
      //- Constructors -/
     //----------------/
 
-    public SignUpRequestDescriptor() {
+    public QryUserReqDescriptor() {
         super();
-        xmlName = "signUpRequest";
+        xmlName = "qryUserReq";
         
         //-- set grouping compositor
         setCompositorAsSequence();
@@ -60,47 +60,6 @@ public class SignUpRequestDescriptor extends org.exolab.castor.xml.util.XMLClass
         
         //-- initialize element descriptors
         
-        //-- _userName
-        desc = new XMLFieldDescriptorImpl(java.lang.String.class, "_userName", "userName", NodeType.Element);
-        desc.setImmutable(true);
-        handler = (new XMLFieldHandler() {
-            public java.lang.Object getValue( java.lang.Object object ) 
-                throws IllegalStateException
-            {
-                SignUpRequest target = (SignUpRequest) object;
-                return target.getUserName();
-            }
-            public void setValue( java.lang.Object object, java.lang.Object value) 
-                throws IllegalStateException, IllegalArgumentException
-            {
-                try {
-                    SignUpRequest target = (SignUpRequest) object;
-                    target.setUserName( (java.lang.String) value);
-                }
-                catch (Exception ex) {
-                    throw new IllegalStateException(ex.toString());
-                }
-            }
-            public java.lang.Object newInstance( java.lang.Object parent ) {
-                return null;
-            }
-        } );
-        desc.setHandler(handler);
-        desc.setRequired(true);
-        desc.setMultivalued(false);
-        addFieldDescriptor(desc);
-        
-        //-- validation code for: _userName
-        fieldValidator = new FieldValidator();
-        fieldValidator.setMinOccurs(1);
-        { //-- local scope
-            StringValidator sv = new StringValidator();
-            sv.setMaxLength(20);
-            sv.setWhiteSpace("preserve");
-            fieldValidator.setValidator(sv);
-        }
-        desc.setValidator(fieldValidator);
-        
         //-- _realName
         desc = new XMLFieldDescriptorImpl(java.lang.String.class, "_realName", "realName", NodeType.Element);
         desc.setImmutable(true);
@@ -108,14 +67,14 @@ public class SignUpRequestDescriptor extends org.exolab.castor.xml.util.XMLClass
             public java.lang.Object getValue( java.lang.Object object ) 
                 throws IllegalStateException
             {
-                SignUpRequest target = (SignUpRequest) object;
+                QryUserReq target = (QryUserReq) object;
                 return target.getRealName();
             }
             public void setValue( java.lang.Object object, java.lang.Object value) 
                 throws IllegalStateException, IllegalArgumentException
             {
                 try {
-                    SignUpRequest target = (SignUpRequest) object;
+                    QryUserReq target = (QryUserReq) object;
                     target.setRealName( (java.lang.String) value);
                 }
                 catch (Exception ex) {
@@ -127,13 +86,11 @@ public class SignUpRequestDescriptor extends org.exolab.castor.xml.util.XMLClass
             }
         } );
         desc.setHandler(handler);
-        desc.setRequired(true);
         desc.setMultivalued(false);
         addFieldDescriptor(desc);
         
         //-- validation code for: _realName
         fieldValidator = new FieldValidator();
-        fieldValidator.setMinOccurs(1);
         { //-- local scope
             StringValidator sv = new StringValidator();
             sv.setMaxLength(20);
@@ -142,145 +99,22 @@ public class SignUpRequestDescriptor extends org.exolab.castor.xml.util.XMLClass
         }
         desc.setValidator(fieldValidator);
         
-        //-- _password
-        desc = new XMLFieldDescriptorImpl(java.lang.String.class, "_password", "password", NodeType.Element);
+        //-- _userName
+        desc = new XMLFieldDescriptorImpl(java.lang.String.class, "_userName", "userName", NodeType.Element);
         desc.setImmutable(true);
         handler = (new XMLFieldHandler() {
             public java.lang.Object getValue( java.lang.Object object ) 
                 throws IllegalStateException
             {
-                SignUpRequest target = (SignUpRequest) object;
-                return target.getPassword();
+                QryUserReq target = (QryUserReq) object;
+                return target.getUserName();
             }
             public void setValue( java.lang.Object object, java.lang.Object value) 
                 throws IllegalStateException, IllegalArgumentException
             {
                 try {
-                    SignUpRequest target = (SignUpRequest) object;
-                    target.setPassword( (java.lang.String) value);
-                }
-                catch (Exception ex) {
-                    throw new IllegalStateException(ex.toString());
-                }
-            }
-            public java.lang.Object newInstance( java.lang.Object parent ) {
-                return null;
-            }
-        } );
-        desc.setHandler(handler);
-        desc.setRequired(true);
-        desc.setMultivalued(false);
-        addFieldDescriptor(desc);
-        
-        //-- validation code for: _password
-        fieldValidator = new FieldValidator();
-        fieldValidator.setMinOccurs(1);
-        { //-- local scope
-            StringValidator sv = new StringValidator();
-            sv.setMaxLength(40);
-            sv.setWhiteSpace("preserve");
-            fieldValidator.setValidator(sv);
-        }
-        desc.setValidator(fieldValidator);
-        
-        //-- _password2
-        desc = new XMLFieldDescriptorImpl(java.lang.String.class, "_password2", "password2", NodeType.Element);
-        desc.setImmutable(true);
-        handler = (new XMLFieldHandler() {
-            public java.lang.Object getValue( java.lang.Object object ) 
-                throws IllegalStateException
-            {
-                SignUpRequest target = (SignUpRequest) object;
-                return target.getPassword2();
-            }
-            public void setValue( java.lang.Object object, java.lang.Object value) 
-                throws IllegalStateException, IllegalArgumentException
-            {
-                try {
-                    SignUpRequest target = (SignUpRequest) object;
-                    target.setPassword2( (java.lang.String) value);
-                }
-                catch (Exception ex) {
-                    throw new IllegalStateException(ex.toString());
-                }
-            }
-            public java.lang.Object newInstance( java.lang.Object parent ) {
-                return null;
-            }
-        } );
-        desc.setHandler(handler);
-        desc.setRequired(true);
-        desc.setMultivalued(false);
-        addFieldDescriptor(desc);
-        
-        //-- validation code for: _password2
-        fieldValidator = new FieldValidator();
-        fieldValidator.setMinOccurs(1);
-        { //-- local scope
-            StringValidator sv = new StringValidator();
-            sv.setMaxLength(40);
-            sv.setWhiteSpace("preserve");
-            fieldValidator.setValidator(sv);
-        }
-        desc.setValidator(fieldValidator);
-        
-        //-- _checkCode
-        desc = new XMLFieldDescriptorImpl(java.lang.String.class, "_checkCode", "checkCode", NodeType.Element);
-        desc.setImmutable(true);
-        handler = (new XMLFieldHandler() {
-            public java.lang.Object getValue( java.lang.Object object ) 
-                throws IllegalStateException
-            {
-                SignUpRequest target = (SignUpRequest) object;
-                return target.getCheckCode();
-            }
-            public void setValue( java.lang.Object object, java.lang.Object value) 
-                throws IllegalStateException, IllegalArgumentException
-            {
-                try {
-                    SignUpRequest target = (SignUpRequest) object;
-                    target.setCheckCode( (java.lang.String) value);
-                }
-                catch (Exception ex) {
-                    throw new IllegalStateException(ex.toString());
-                }
-            }
-            public java.lang.Object newInstance( java.lang.Object parent ) {
-                return null;
-            }
-        } );
-        desc.setHandler(handler);
-        desc.setRequired(true);
-        desc.setMultivalued(false);
-        addFieldDescriptor(desc);
-        
-        //-- validation code for: _checkCode
-        fieldValidator = new FieldValidator();
-        fieldValidator.setMinOccurs(1);
-        { //-- local scope
-            StringValidator sv = new StringValidator();
-            sv.setMaxLength(8);
-            sv.setWhiteSpace("preserve");
-            fieldValidator.setValidator(sv);
-        }
-        desc.setValidator(fieldValidator);
-        
-        //-- _weixin
-        desc = new XMLFieldDescriptorImpl(java.lang.String.class, "_weixin", "weixin", NodeType.Element);
-        desc.setImmutable(true);
-        handler = (new XMLFieldHandler() {
-            public java.lang.Object getValue( java.lang.Object object ) 
-                throws IllegalStateException
-            {
-                SignUpRequest target = (SignUpRequest) object;
-                return target.getWeixin();
-            }
-            public void setValue( java.lang.Object object, java.lang.Object value) 
-                throws IllegalStateException, IllegalArgumentException
-            {
-                try {
-                    SignUpRequest target = (SignUpRequest) object;
-                    target.setWeixin( (java.lang.String) value);
+                    QryUserReq target = (QryUserReq) object;
+                    target.setUserName( (java.lang.String) value);
                 }
                 catch (Exception ex) {
                     throw new IllegalStateException(ex.toString());
@@ -294,132 +128,11 @@ public class SignUpRequestDescriptor extends org.exolab.castor.xml.util.XMLClass
         desc.setMultivalued(false);
         addFieldDescriptor(desc);
         
-        //-- validation code for: _weixin
+        //-- validation code for: _userName
         fieldValidator = new FieldValidator();
         { //-- local scope
             StringValidator sv = new StringValidator();
-            sv.setMaxLength(30);
-            sv.setWhiteSpace("preserve");
-            fieldValidator.setValidator(sv);
-        }
-        desc.setValidator(fieldValidator);
-        
-        //-- _address
-        desc = new XMLFieldDescriptorImpl(java.lang.String.class, "_address", "address", NodeType.Element);
-        desc.setImmutable(true);
-        handler = (new XMLFieldHandler() {
-            public java.lang.Object getValue( java.lang.Object object ) 
-                throws IllegalStateException
-            {
-                SignUpRequest target = (SignUpRequest) object;
-                return target.getAddress();
-            }
-            public void setValue( java.lang.Object object, java.lang.Object value) 
-                throws IllegalStateException, IllegalArgumentException
-            {
-                try {
-                    SignUpRequest target = (SignUpRequest) object;
-                    target.setAddress( (java.lang.String) value);
-                }
-                catch (Exception ex) {
-                    throw new IllegalStateException(ex.toString());
-                }
-            }
-            public java.lang.Object newInstance( java.lang.Object parent ) {
-                return null;
-            }
-        } );
-        desc.setHandler(handler);
-        desc.setMultivalued(false);
-        addFieldDescriptor(desc);
-        
-        //-- validation code for: _address
-        fieldValidator = new FieldValidator();
-        { //-- local scope
-            StringValidator sv = new StringValidator();
-            sv.setMaxLength(50);
-            sv.setWhiteSpace("preserve");
-            fieldValidator.setValidator(sv);
-        }
-        desc.setValidator(fieldValidator);
-        
-        //-- _phone
-        desc = new XMLFieldDescriptorImpl(java.lang.String.class, "_phone", "phone", NodeType.Element);
-        desc.setImmutable(true);
-        handler = (new XMLFieldHandler() {
-            public java.lang.Object getValue( java.lang.Object object ) 
-                throws IllegalStateException
-            {
-                SignUpRequest target = (SignUpRequest) object;
-                return target.getPhone();
-            }
-            public void setValue( java.lang.Object object, java.lang.Object value) 
-                throws IllegalStateException, IllegalArgumentException
-            {
-                try {
-                    SignUpRequest target = (SignUpRequest) object;
-                    target.setPhone( (java.lang.String) value);
-                }
-                catch (Exception ex) {
-                    throw new IllegalStateException(ex.toString());
-                }
-            }
-            public java.lang.Object newInstance( java.lang.Object parent ) {
-                return null;
-            }
-        } );
-        desc.setHandler(handler);
-        desc.setRequired(true);
-        desc.setMultivalued(false);
-        addFieldDescriptor(desc);
-        
-        //-- validation code for: _phone
-        fieldValidator = new FieldValidator();
-        fieldValidator.setMinOccurs(1);
-        { //-- local scope
-            StringValidator sv = new StringValidator();
-            sv.setLength(11);
-            sv.setWhiteSpace("preserve");
-            fieldValidator.setValidator(sv);
-        }
-        desc.setValidator(fieldValidator);
-        
-        //-- _age
-        desc = new XMLFieldDescriptorImpl(java.lang.String.class, "_age", "age", NodeType.Element);
-        desc.setImmutable(true);
-        handler = (new XMLFieldHandler() {
-            public java.lang.Object getValue( java.lang.Object object ) 
-                throws IllegalStateException
-            {
-                SignUpRequest target = (SignUpRequest) object;
-                return target.getAge();
-            }
-            public void setValue( java.lang.Object object, java.lang.Object value) 
-                throws IllegalStateException, IllegalArgumentException
-            {
-                try {
-                    SignUpRequest target = (SignUpRequest) object;
-                    target.setAge( (java.lang.String) value);
-                }
-                catch (Exception ex) {
-                    throw new IllegalStateException(ex.toString());
-                }
-            }
-            public java.lang.Object newInstance( java.lang.Object parent ) {
-                return null;
-            }
-        } );
-        desc.setHandler(handler);
-        desc.setRequired(true);
-        desc.setMultivalued(false);
-        addFieldDescriptor(desc);
-        
-        //-- validation code for: _age
-        fieldValidator = new FieldValidator();
-        fieldValidator.setMinOccurs(1);
-        { //-- local scope
-            StringValidator sv = new StringValidator();
-            sv.setMaxLength(2);
+            sv.setMaxLength(20);
             sv.setWhiteSpace("preserve");
             fieldValidator.setValidator(sv);
         }
@@ -432,14 +145,14 @@ public class SignUpRequestDescriptor extends org.exolab.castor.xml.util.XMLClass
             public java.lang.Object getValue( java.lang.Object object ) 
                 throws IllegalStateException
             {
-                SignUpRequest target = (SignUpRequest) object;
+                QryUserReq target = (QryUserReq) object;
                 return target.getEducation();
             }
             public void setValue( java.lang.Object object, java.lang.Object value) 
                 throws IllegalStateException, IllegalArgumentException
             {
                 try {
-                    SignUpRequest target = (SignUpRequest) object;
+                    QryUserReq target = (QryUserReq) object;
                     target.setEducation( (java.lang.String) value);
                 }
                 catch (Exception ex) {
@@ -451,16 +164,14 @@ public class SignUpRequestDescriptor extends org.exolab.castor.xml.util.XMLClass
             }
         } );
         desc.setHandler(handler);
-        desc.setRequired(true);
         desc.setMultivalued(false);
         addFieldDescriptor(desc);
         
         //-- validation code for: _education
         fieldValidator = new FieldValidator();
-        fieldValidator.setMinOccurs(1);
         { //-- local scope
             StringValidator sv = new StringValidator();
-            sv.setLength(1);
+            sv.setMaxLength(20);
             sv.setWhiteSpace("preserve");
             fieldValidator.setValidator(sv);
         }
@@ -473,14 +184,14 @@ public class SignUpRequestDescriptor extends org.exolab.castor.xml.util.XMLClass
             public java.lang.Object getValue( java.lang.Object object ) 
                 throws IllegalStateException
             {
-                SignUpRequest target = (SignUpRequest) object;
+                QryUserReq target = (QryUserReq) object;
                 return target.getClassType();
             }
             public void setValue( java.lang.Object object, java.lang.Object value) 
                 throws IllegalStateException, IllegalArgumentException
             {
                 try {
-                    SignUpRequest target = (SignUpRequest) object;
+                    QryUserReq target = (QryUserReq) object;
                     target.setClassType( (java.lang.String) value);
                 }
                 catch (Exception ex) {
@@ -492,22 +203,176 @@ public class SignUpRequestDescriptor extends org.exolab.castor.xml.util.XMLClass
             }
         } );
         desc.setHandler(handler);
-        desc.setRequired(true);
         desc.setMultivalued(false);
         addFieldDescriptor(desc);
         
         //-- validation code for: _classType
         fieldValidator = new FieldValidator();
-        fieldValidator.setMinOccurs(1);
         { //-- local scope
             StringValidator sv = new StringValidator();
-            sv.setLength(1);
+            sv.setMaxLength(20);
             sv.setWhiteSpace("preserve");
             fieldValidator.setValidator(sv);
         }
         desc.setValidator(fieldValidator);
         
-    } //-- com.guoyasoft.bean.api.user.signUp.SignUpRequestDescriptor()
+        //-- _startTime
+        desc = new XMLFieldDescriptorImpl(java.lang.String.class, "_startTime", "startTime", NodeType.Element);
+        desc.setImmutable(true);
+        handler = (new XMLFieldHandler() {
+            public java.lang.Object getValue( java.lang.Object object ) 
+                throws IllegalStateException
+            {
+                QryUserReq target = (QryUserReq) object;
+                return target.getStartTime();
+            }
+            public void setValue( java.lang.Object object, java.lang.Object value) 
+                throws IllegalStateException, IllegalArgumentException
+            {
+                try {
+                    QryUserReq target = (QryUserReq) object;
+                    target.setStartTime( (java.lang.String) value);
+                }
+                catch (Exception ex) {
+                    throw new IllegalStateException(ex.toString());
+                }
+            }
+            public java.lang.Object newInstance( java.lang.Object parent ) {
+                return null;
+            }
+        } );
+        desc.setHandler(handler);
+        desc.setMultivalued(false);
+        addFieldDescriptor(desc);
+        
+        //-- validation code for: _startTime
+        fieldValidator = new FieldValidator();
+        { //-- local scope
+            StringValidator sv = new StringValidator();
+            sv.setMaxLength(20);
+            sv.setWhiteSpace("preserve");
+            fieldValidator.setValidator(sv);
+        }
+        desc.setValidator(fieldValidator);
+        
+        //-- _endTime
+        desc = new XMLFieldDescriptorImpl(java.lang.String.class, "_endTime", "endTime", NodeType.Element);
+        desc.setImmutable(true);
+        handler = (new XMLFieldHandler() {
+            public java.lang.Object getValue( java.lang.Object object ) 
+                throws IllegalStateException
+            {
+                QryUserReq target = (QryUserReq) object;
+                return target.getEndTime();
+            }
+            public void setValue( java.lang.Object object, java.lang.Object value) 
+                throws IllegalStateException, IllegalArgumentException
+            {
+                try {
+                    QryUserReq target = (QryUserReq) object;
+                    target.setEndTime( (java.lang.String) value);
+                }
+                catch (Exception ex) {
+                    throw new IllegalStateException(ex.toString());
+                }
+            }
+            public java.lang.Object newInstance( java.lang.Object parent ) {
+                return null;
+            }
+        } );
+        desc.setHandler(handler);
+        desc.setMultivalued(false);
+        addFieldDescriptor(desc);
+        
+        //-- validation code for: _endTime
+        fieldValidator = new FieldValidator();
+        { //-- local scope
+            StringValidator sv = new StringValidator();
+            sv.setMaxLength(20);
+            sv.setWhiteSpace("preserve");
+            fieldValidator.setValidator(sv);
+        }
+        desc.setValidator(fieldValidator);
+        
+        //-- _minAge
+        desc = new XMLFieldDescriptorImpl(java.lang.String.class, "_minAge", "minAge", NodeType.Element);
+        desc.setImmutable(true);
+        handler = (new XMLFieldHandler() {
+            public java.lang.Object getValue( java.lang.Object object ) 
+                throws IllegalStateException
+            {
+                QryUserReq target = (QryUserReq) object;
+                return target.getMinAge();
+            }
+            public void setValue( java.lang.Object object, java.lang.Object value) 
+                throws IllegalStateException, IllegalArgumentException
+            {
+                try {
+                    QryUserReq target = (QryUserReq) object;
+                    target.setMinAge( (java.lang.String) value);
+                }
+                catch (Exception ex) {
+                    throw new IllegalStateException(ex.toString());
+                }
+            }
+            public java.lang.Object newInstance( java.lang.Object parent ) {
+                return null;
+            }
+        } );
+        desc.setHandler(handler);
+        desc.setMultivalued(false);
+        addFieldDescriptor(desc);
+        
+        //-- validation code for: _minAge
+        fieldValidator = new FieldValidator();
+        { //-- local scope
+            StringValidator sv = new StringValidator();
+            sv.setMaxLength(20);
+            sv.setWhiteSpace("preserve");
+            fieldValidator.setValidator(sv);
+        }
+        desc.setValidator(fieldValidator);
+        
+        //-- _maxAge
+        desc = new XMLFieldDescriptorImpl(java.lang.String.class, "_maxAge", "maxAge", NodeType.Element);
+        desc.setImmutable(true);
+        handler = (new XMLFieldHandler() {
+            public java.lang.Object getValue( java.lang.Object object ) 
+                throws IllegalStateException
+            {
+                QryUserReq target = (QryUserReq) object;
+                return target.getMaxAge();
+            }
+            public void setValue( java.lang.Object object, java.lang.Object value) 
+                throws IllegalStateException, IllegalArgumentException
+            {
+                try {
+                    QryUserReq target = (QryUserReq) object;
+                    target.setMaxAge( (java.lang.String) value);
+                }
+                catch (Exception ex) {
+                    throw new IllegalStateException(ex.toString());
+                }
+            }
+            public java.lang.Object newInstance( java.lang.Object parent ) {
+                return null;
+            }
+        } );
+        desc.setHandler(handler);
+        desc.setMultivalued(false);
+        addFieldDescriptor(desc);
+        
+        //-- validation code for: _maxAge
+        fieldValidator = new FieldValidator();
+        { //-- local scope
+            StringValidator sv = new StringValidator();
+            sv.setMaxLength(20);
+            sv.setWhiteSpace("preserve");
+            fieldValidator.setValidator(sv);
+        }
+        desc.setValidator(fieldValidator);
+        
+    } //-- com.guoyasoft.bean.api.user.queryUser.QryUserReqDescriptor()
 
 
       //-----------/
@@ -539,7 +404,7 @@ public class SignUpRequestDescriptor extends org.exolab.castor.xml.util.XMLClass
     **/
     public java.lang.Class getJavaClass()
     {
-        return com.guoyasoft.bean.api.user.signUp.SignUpRequest.class;
+        return com.guoyasoft.bean.api.user.queryUser.QryUserReq.class;
     } //-- java.lang.Class getJavaClass() 
 
     /**

@@ -12,6 +12,7 @@
     <result column="class_type" jdbcType="VARCHAR" property="classType" />
     <result column="address" jdbcType="VARCHAR" property="address" />
     <result column="education" jdbcType="VARCHAR" property="education" />
+    <result column="newtime" jdbcType="TIMESTAMP" property="newtime" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -72,7 +73,8 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    sno, realName, sname, password, age, weichat, phone, class_type, address, education
+    sno, realName, sname, password, age, weichat, phone, class_type, address, education, 
+    newtime
   </sql>
   <select id="selectByExample" parameterType="com.guoyasoft.bean.db.GyUserExample" resultMap="BaseResultMap">
     select
@@ -106,11 +108,11 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.guoyasoft.bean.db.GyUser">
-    insert into gy_user (sno, realName, sname, 
+    insert into gy_user (realName, sname, 
       password, age, weichat, 
       phone, class_type, address, 
       education)
-    values (#{sno,jdbcType=INTEGER}, #{realname,jdbcType=VARCHAR}, #{sname,jdbcType=VARCHAR}, 
+    values (#{realname,jdbcType=VARCHAR}, #{sname,jdbcType=VARCHAR}, 
       #{password,jdbcType=VARCHAR}, #{age,jdbcType=INTEGER}, #{weichat,jdbcType=VARCHAR}, 
       #{phone,jdbcType=VARCHAR}, #{classType,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, 
       #{education,jdbcType=VARCHAR})
@@ -148,6 +150,9 @@
       <if test="education != null">
         education,
       </if>
+      <if test="newtime != null">
+        newtime,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="sno != null">
@@ -179,6 +184,9 @@
       </if>
       <if test="education != null">
         #{education,jdbcType=VARCHAR},
+      </if>
+      <if test="newtime != null">
+        #{newtime,jdbcType=TIMESTAMP},
       </if>
     </trim>
   </insert>
@@ -221,6 +229,9 @@
       <if test="record.education != null">
         education = #{record.education,jdbcType=VARCHAR},
       </if>
+      <if test="record.newtime != null">
+        newtime = #{record.newtime,jdbcType=TIMESTAMP},
+      </if>
     </set>
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -237,7 +248,8 @@
       phone = #{record.phone,jdbcType=VARCHAR},
       class_type = #{record.classType,jdbcType=VARCHAR},
       address = #{record.address,jdbcType=VARCHAR},
-      education = #{record.education,jdbcType=VARCHAR}
+      education = #{record.education,jdbcType=VARCHAR},
+      newtime = #{record.newtime,jdbcType=TIMESTAMP}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -272,6 +284,9 @@
       <if test="education != null">
         education = #{education,jdbcType=VARCHAR},
       </if>
+      <if test="newtime != null">
+        newtime = #{newtime,jdbcType=TIMESTAMP},
+      </if>
     </set>
     where sno = #{sno,jdbcType=INTEGER}
   </update>
@@ -285,7 +300,8 @@
       phone = #{phone,jdbcType=VARCHAR},
       class_type = #{classType,jdbcType=VARCHAR},
       address = #{address,jdbcType=VARCHAR},
-      education = #{education,jdbcType=VARCHAR}
+      education = #{education,jdbcType=VARCHAR},
+      newtime = #{newtime,jdbcType=TIMESTAMP}
     where sno = #{sno,jdbcType=INTEGER}
   </update>
 </mapper>

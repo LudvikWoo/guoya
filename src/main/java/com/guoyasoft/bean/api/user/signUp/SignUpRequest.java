@@ -186,7 +186,9 @@ public class SignUpRequest implements java.io.Serializable {
             validate();
         }
         catch (org.exolab.castor.xml.ValidationException vex) {
+        	vex.printStackTrace();
             return false;
+            
         }
         return true;
     } //-- boolean isValid() 
@@ -344,5 +346,16 @@ public class SignUpRequest implements java.io.Serializable {
         org.exolab.castor.xml.Validator validator = new org.exolab.castor.xml.Validator();
         validator.validate(this);
     } //-- void validate() 
+
+
+	@Override
+	public String toString() {
+		return "SignUpRequest [_userName=" + _userName + ", _realName="
+				+ _realName + ", _password=" + _password + ", _password2="
+				+ _password2 + ", _checkCode=" + _checkCode + ", _weixin="
+				+ _weixin + ", _address=" + _address + ", _phone=" + _phone
+				+ ", _age=" + _age + ", _education=" + _education
+				+ ", _classType=" + _classType + "]";
+	}
 
 }

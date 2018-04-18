@@ -1,6 +1,7 @@
 package com.guoyasoft.bean.db;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class GyUserExample {
@@ -781,6 +782,66 @@ public class GyUserExample {
 
         public Criteria andEducationNotBetween(String value1, String value2) {
             addCriterion("education not between", value1, value2, "education");
+            return (Criteria) this;
+        }
+
+        public Criteria andNewtimeIsNull() {
+            addCriterion("newtime is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andNewtimeIsNotNull() {
+            addCriterion("newtime is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andNewtimeEqualTo(Date value) {
+            addCriterion("newtime =", value, "newtime");
+            return (Criteria) this;
+        }
+
+        public Criteria andNewtimeNotEqualTo(Date value) {
+            addCriterion("newtime <>", value, "newtime");
+            return (Criteria) this;
+        }
+
+        public Criteria andNewtimeGreaterThan(Date value) {
+            addCriterion("newtime >", value, "newtime");
+            return (Criteria) this;
+        }
+
+        public Criteria andNewtimeGreaterThanOrEqualTo(Date value) {
+            addCriterion("newtime >=", value, "newtime");
+            return (Criteria) this;
+        }
+
+        public Criteria andNewtimeLessThan(Date value) {
+            addCriterion("newtime <", value, "newtime");
+            return (Criteria) this;
+        }
+
+        public Criteria andNewtimeLessThanOrEqualTo(Date value) {
+            addCriterion("newtime <=", value, "newtime");
+            return (Criteria) this;
+        }
+
+        public Criteria andNewtimeIn(List<Date> values) {
+            addCriterion("newtime in", values, "newtime");
+            return (Criteria) this;
+        }
+
+        public Criteria andNewtimeNotIn(List<Date> values) {
+            addCriterion("newtime not in", values, "newtime");
+            return (Criteria) this;
+        }
+
+        public Criteria andNewtimeBetween(Date value1, Date value2) {
+            addCriterion("newtime between", value1, value2, "newtime");
+            return (Criteria) this;
+        }
+
+        public Criteria andNewtimeNotBetween(Date value1, Date value2) {
+            addCriterion("newtime not between", value1, value2, "newtime");
             return (Criteria) this;
         }
     }

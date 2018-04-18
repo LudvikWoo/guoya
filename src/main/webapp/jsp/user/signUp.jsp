@@ -33,11 +33,20 @@ td {
 	border: 1px solid black;
 }
 </style>
+<script type="text/javascript">
+	function change(){
+		var btn=document.getElementById("classType");
+		btn.onClick=function(){
+			alert(1);
+		};
+	}
+</script>
 
 </head>
 
 <body>
-	<form action="user/signUp" method="get" >
+	<center><h1>登记注册</h1></center>
+	<form action="user/signUp.action" method="get" >
 		<table>
 			<tr>
 				<td>用户名：</td>
@@ -77,7 +86,7 @@ td {
 			</tr>
 			<tr>
 				<td>班级：</td>
-				<td><input type="text" name="classType"> * </td>
+				<td><input type="text" name="classType" id="classType"> * </td>
 			</tr>
 			<tr>
 				<td>校验码：</td>
@@ -85,7 +94,7 @@ td {
 			</tr>
 			<tr>
 				<td>
-    				<input type="submit" value="注册"></td>
+    				<input type="submit" value="注册" onclick="change()"></td>
 				<td><input type="reset" value="重置"></td>
 			</tr>
 		</table>

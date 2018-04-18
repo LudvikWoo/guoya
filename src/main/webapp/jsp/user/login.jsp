@@ -34,10 +34,24 @@ td {
 }
 </style>
 
+<script src="js/jquery-3.3.1.min.js" type="text/javascript"></script>
+<script src="js/md5.js" type="text/javascript"></script>
+<script type="text/javascript">
+	var key = "guoyasoft";
+	$(document).ready(function() {
+		$("#loginBtn").click(function(){
+			var password = $("#password").val();
+			$("#password").val(hex_md5(password + "&key=" + key));
+			$("#form").submit();
+		});
+	});
+</script>
+
 </head>
 
 <body>
-	<form action="user/login" method="get" >
+	<center><h1>登录界面</h1></center>
+	<form action="user/login.action" method="post" id="form">
 		<table>
 			<tr>
 				<td>用户名：</td>
@@ -45,18 +59,16 @@ td {
 			</tr>
 			<tr>
 				<td>密码：</td>
-				<td><input type="password" name="password"></td>
+				<td><input type="password" id="password" name="password"></td>
 			</tr>
 			<tr>
 				<td>校验码：</td>
 				<td><input type="text" name="checkCode"> 12345</td>
 			</tr>
 			<tr>
-				<td>
-    				<input type="submit" value="登录"></td>
+				<td><input id="loginBtn" type="button" value="登录"></td>
 				<td><input type="reset" value="重置"></td>
 			</tr>
-
 		</table>
 	</form>
 </body>

@@ -1,5 +1,7 @@
 package com.guoyasoft.bean.db;
 
+import java.util.Date;
+
 public class GyUser {
     private Integer sno;
 
@@ -20,6 +22,8 @@ public class GyUser {
     private String address;
 
     private String education;
+
+    private Date newtime;
 
     public Integer getSno() {
         return sno;
@@ -99,5 +103,13 @@ public class GyUser {
 
     public void setEducation(String education) {
         this.education = education == null ? null : education.trim();
+    }
+
+    public Date getNewtime() {
+        return newtime;
+    }
+
+    public void setNewtime(Date newtime) {
+        this.newtime = newtime;
     }
 }
