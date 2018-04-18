@@ -4,7 +4,7 @@
 	<groupId>com.guoyasoft</groupId>
 	<artifactId>guoya</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	<packaging>war</packaging>
 	<name>guoya</name>
 	<description />
 	<properties>
